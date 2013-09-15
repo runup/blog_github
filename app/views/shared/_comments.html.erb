@@ -1,6 +1,6 @@
 <div>
             <hr>
-            读者评论:
+            <p><small>读者评论:</small></p>
             <% @article.comments.each do |comment| %>
                       
             <table>
@@ -12,16 +12,19 @@
                 <tr>
                   <td><p><small>评论时间:<%=comment.created_at%></small></p></td>
                 </tr>
+
+                <% if signed_in? %>
+                <tr>
+                  <td rowspan="2"><p><small>
+                  <%= link_to '删除评论',[comment.article,comment],:confirm=>'确定删除？',:method=> :delete %>                    
+                  </small></p></td>
+                </tr>
+                <% end %>
                 <hr>
 
-            </table>
-
-
-          
-                     
-              <p><small>
+            </table>                          
+              <p>
                 <%=raw comment.content %>
-              </small></p>
-
+              </p>
             <% end %>
 </div>

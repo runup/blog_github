@@ -1,17 +1,12 @@
+<% provide(:title, "发布文章") %>
+
 <div class="row">
-    <aside class="span4">
+   
 
-      <section>
-        用户名：
-        <%=@user.name%></br>
-        <%=@user.email%>
-      </section>
-    </aside> 
-
-    <div class="span8">
-    	<%= link_to '发布知识',new_article_path,class: "btn btn-large btn-primary" %>	
+    <div class="span12">
+    	<%= link_to '发布文章',new_article_path,class: "btn btn-large btn-primary" %>	
       </br>
-      <%=paginate @articles, :theme => 'twitter-bootstrap' %>
+      
     	<ol>
       
       
@@ -27,7 +22,8 @@
    		</li>
       
        <%end%>
-      </ol>   
+      </ol>
+      <%=paginate @articles, :theme => 'twitter-bootstrap' %>   
     </div>
 </div>
 

@@ -10,7 +10,7 @@
     </aside> 
 
     <div class="span8">
-      <h3 align="center">知识编辑</h3>
+      <h3 align="center">文章编辑</h3>
       <%= form_for(@article) do |f| %>
 
       <div class="field">
@@ -18,9 +18,9 @@
         <%= f.text_field :title %>
       </div>
 
-      <div class="field">
-       <%= f.label :标签 %><br />
-        <%= f.text_field :tag %>
+      <div>
+        <%= f.label :标签 %><br />
+        <%= f.select :tag, options_for_select([['产品经理'], ['知识管理'], ['时间管理'], ['互联网产品'], ['电子商务'], ['移动互联网'], ['电影人生'], ['逻辑思维'], ['阅读空间'], ['生活感悟'], ['web开发'], ['java学习'], ['ruby学习'], ['数据结构']]),:class=>'textbg3' %>
       </div>
 
       <div class="field">

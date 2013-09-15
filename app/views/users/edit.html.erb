@@ -1,24 +1,24 @@
-<% provide(:title, "Edit user") %>
-<h3 align="center">更新资料</h3>
+<% provide(:title, "用户资料编辑") %>
+<p align="center"><strong>更新资料</strong></p>
 
 <div class="row">
   <div class="span6 offset3">
   <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :姓名 %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label :邮件 %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :密码 %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :密码确认, "密码确认" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= f.submit "保存设置", class: "btn btn-large btn-primary" %>
     <% end %>
 
     
