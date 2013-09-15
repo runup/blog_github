@@ -1,39 +1,39 @@
 
 <div class="row">
-    <aside class="span4">
-     
-      <section>
-        用户名：
-        <%=@user.name%></br>
-        <%=@user.email%>
-      </section>
-    </aside> 
+	<aside class="span4">
 
-    <div class="span8">
-      <h3 align="center">文章编辑</h3>
-      <%= form_for(@article) do |f| %>
+		<section>
+			用户名：
+			<%=@user.name%></br>
+			<%=@user.email%>
+		</section>
+	</aside> 
 
-      <div class="field">
-       <%= f.label :题目 %><br />
-        <%= f.text_field :title %>
-      </div>
+	<div class="span8">
+		<h3 align="center">文章编辑</h3>
+		<%= form_for(@article) do |f| %>
 
-      <div>
-        <%= f.label :标签 %><br />
-        <%= f.select :tag, options_for_select([['产品经理'], ['知识管理'], ['时间管理'], ['互联网产品'], ['电子商务'], ['移动互联网'], ['电影人生'], ['逻辑思维'], ['阅读空间'], ['生活感悟'], ['web开发'], ['java学习'], ['ruby学习'], ['数据结构']]),:class=>'textbg3' %>
-      </div>
+			<div class="field">
+				<%= f.label :题目 %><br />
+				<%= f.text_field :title %>
+			</div>
 
-      <div class="field">
-      <%= f.label :内容 %><br />
-      <%= f.kindeditor :content, :width => 670, :height => 400, :langType => 'en' %> 
-      </div>
+			<div>
+				<%= f.label :标签 %>
+				<%= f.select :tag, options_for_select([]),{prompt: "abc"},{class: 'textbg3'} %>
+			</div>
 
-      <div class="actions">
-        <%= f.submit  :提交, class: "btn btn-large btn-primary"%>
-      </div>
-    <% end %>
-          
-    </div>
+			<div class="field">
+				<%= f.label :内容 %><br />
+				<%= f.kindeditor :content, :width => 670, :height => 400, :langType => 'en' %> 
+			</div>
+
+			<div class="actions">
+				<%= f.submit  :提交, class: "btn btn-large btn-primary"%>
+			</div>
+		<% end %>
+
+	</div>
 </div>
 
 
